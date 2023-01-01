@@ -52,35 +52,35 @@ const Button = styled(Link)`
         transform: scale(1.1);
     }
 `
-const columns = [
-    { field: 'id', headerName: 'ID',flex: 1, headerAlign: 'center', align: 'center'},
-    { field: 'product', headerName: 'Product', flex: 2, headerAlign: 'center', renderCell: (params) =>{
-
-      return(<ImageContainer>
-        <Image img src={params.row.img}/> {params.row.name}
-        </ImageContainer>
-      )
-
-    } },
-    { field: 'stock', headerName: 'Stock', flex: 2, headerAlign: 'center', align: 'center'},
-    { field: 'status', headerName: 'Status', flex: 2, headerAlign: 'center', align: 'center'},
-    { field: 'price', headerName: 'Price', flex: 2, headerAlign: 'center', align: 'center'},
-    {
-      field: 'actions', headerName: 'Actions', flex: 2, headerAlign: 'center', align: 'center', renderCell: (params)=>{
-      
-        return(<ActionContainer>
-            <Button to={"/product/"+params.row.id}>Edit</Button>
-            <Icon>
-              <DeleteForever onClick = {()=>handleDelete(params.row.id)}/>
-            </Icon>
-        </ActionContainer>
-        )
-      }
-    }
-  ];
 export default function ProductList() {
+  const columns = [
+      { field: 'id', headerName: 'ID',flex: 1, headerAlign: 'center', align: 'center'},
+      { field: 'product', headerName: 'Product', flex: 2, headerAlign: 'center', renderCell: (params) =>{
+  
+        return(<ImageContainer>
+          <Image img src={params.row.img}/> {params.row.name}
+          </ImageContainer>
+        )
+  
+      } },
+      { field: 'stock', headerName: 'Stock', flex: 2, headerAlign: 'center', align: 'center'},
+      { field: 'status', headerName: 'Status', flex: 2, headerAlign: 'center', align: 'center'},
+      { field: 'price', headerName: 'Price', flex: 2, headerAlign: 'center', align: 'center'},
+      {
+        field: 'actions', headerName: 'Actions', flex: 2, headerAlign: 'center', align: 'center', renderCell: (params)=>{
+        
+          return(<ActionContainer>
+              <Button to={"/product/"+params.row.id}>Edit</Button>
+              <Icon>
+                <DeleteForever onClick = {()=>handleDelete(params.row.id)}/>
+              </Icon>
+          </ActionContainer>
+          )
+        }
+      }
+    ];
     const [data, setData] = useState(productRows);
-
+  
     const handleDelete = (id) => {
         console.log(id);
         setData(data.filter((item) => item.id !== id));

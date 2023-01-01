@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { AlternateEmail, CakeOutlined, LocalPhoneOutlined, PersonOutline, Place, Upload } from "@mui/icons-material"
+import { AlternateEmail, CakeOutlined, LocalPhoneOutlined, PersonOutline, Place, PlaceOutlined, Upload } from "@mui/icons-material"
 import {Link} from 'react-router-dom'
 const Container = styled.div`
     flex: 6;
@@ -11,7 +11,6 @@ const TitleContainer = styled.div`
     align-items: center;
     justify-content: space-between;
 `
-
 const Title = styled.h2`
 
 `
@@ -46,68 +45,69 @@ const LeftContainer = styled.div`
 `
 const UserTitle = styled.div`
     display: flex;
-    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: center;
 `
 const NameJob = styled.div`
     display: flex;
     flex-direction: column;
+    margin: 20px 0;
 `
-const Name = styled.span``
+const Name = styled.span`
+    font-size: 18px;
+`
 const Job = styled.span`
     font-weight: 300;
     font-size: 14px;
 `
 const Avatar = styled.img`
     border-radius: 50%;
-    height: 70px;
-    width: 70px;
+    height: 110px;
+    width: 110px;
     object-fit: cover;
 `
 const UserBio = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
     
 `
 const BioItem = styled.div`
-    display: flex;
-    margin: 5px 0;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 400;
-    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: end;
+    margin: 10px 0;
+    
 `
 // form section
 const ContainerRight = styled.div`
-    flex: 2;
+    flex: 3;
     box-shadow: 0px 0px 11px 0px rgba(166,166,166,0.2);
-
     border-radius: 10px;
     padding: 30px;
+
 `
 const FormTitle = styled.div`
 
 `
+const FormContainer = styled.div`
+`
 const Form = styled.form`
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     font-size: 15px;
     margin: 10px 0;
 `
 const InputSide = styled.div`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
 `
 const FormItem = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
-    justify-content: space-between;
-    margin: 8px 0;
+    padding: 10px 0;
+
 `
 const Label = styled.label`
-
 `
 const Input = styled.input`
     outline: none;
@@ -122,10 +122,9 @@ const Input = styled.input`
     
 `
 const PhotoSide = styled.div`
-    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
 `
 const PhotoNButton = styled.div`
     display: flex;
@@ -171,6 +170,17 @@ const SubmitButton = styled.button`
         background-color: #6ECCAF;
     }
 `
+const Select = styled.select`
+    outline: none;
+    border: none;
+    padding: 10px 8px;
+    height: 40px;
+    background-color: #f6f6f6;
+    &:hover{
+        background-color: #f2f2f2;
+    }
+`
+const Option = styled.option``
 const Info = styled.span``
 export default function User() {
     return (
@@ -208,12 +218,13 @@ export default function User() {
                             <Info>email@email.com</Info>
                         </BioItem>
                         <BioItem>
-                            <Place/>
+                            <PlaceOutlined/>
                             <Info>Sri Lanka</Info>
                         </BioItem>
                     </UserBio>
                 </LeftContainer>
                 <ContainerRight>
+                    <FormContainer>
                     <FormTitle>Update user information</FormTitle>
                     <Form>
                         <InputSide>
@@ -237,6 +248,13 @@ export default function User() {
                                 <Label>Country</Label>
                                 <Input placeholder='Sri Lanka'/>
                             </FormItem>
+                            <FormItem>
+                                <Label>Active</Label>
+                                <Select>
+                                    <Option>Yes</Option>
+                                    <Option>No</Option>
+                                </Select>
+                            </FormItem>
                         </InputSide>
                         <PhotoSide>
                             <PhotoNButton>
@@ -249,6 +267,7 @@ export default function User() {
                             </PhotoNButton>
                         </PhotoSide>
                     </Form>
+                    </FormContainer>
                 </ContainerRight>
             </LeftRightContainer>
         </Container>

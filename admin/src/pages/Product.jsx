@@ -176,9 +176,12 @@ const SubmitButton = styled.button`
 const Select = styled.select`
     outline: none;
     border: none;
-    background-color: #f6f6f6;
-    padding: 0 10px;
+    padding: 10px 8px;
     height: 40px;
+    background-color: #f6f6f6;
+    &:hover{
+        background-color: #f2f2f2;
+    }
     
 `
 const Option = styled.option``

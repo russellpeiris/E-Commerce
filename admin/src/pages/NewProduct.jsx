@@ -37,7 +37,6 @@ const Input = styled.input`
     padding: 0 10px;
     height: 40px;
 
-
     &:hover{
         background-color: #f2f2f2;
     }
@@ -80,7 +79,6 @@ const SubmitButton = styled.button`
     background-color: #6ECCAF;
     cursor: pointer;
     transition: all 0.2s ease;
-    height: 40px;
 
     &:hover{
         background-color: #75BBA7;
@@ -92,9 +90,12 @@ const SubmitButton = styled.button`
 const Select = styled.select`
     outline: none;
     border: none;
-    background-color: #f6f6f6;
-    padding: 0 10px;
+    padding: 10px 8px;
     height: 40px;
+    background-color: #f6f6f6;
+    &:hover{
+        background-color: #f2f2f2;
+    }
     
 `
 const Option = styled.option``
@@ -131,7 +132,7 @@ export default function NewProduct() {
                             <Label htmlFor="file"><Upload style={{cursor: 'pointer'}}/></Label>
                             <Input type="file" id="file" style={{display:'none'}}/>
                         </UploadButton>
-                        <SubmitButton type="submit">UPDATE</SubmitButton>
+                        <SubmitButton type="submit">Add Product</SubmitButton>
                     </PhotoNButton>
                 </PhotoSide>
             </Form>

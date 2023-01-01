@@ -38,12 +38,10 @@ const Icon = styled.div`
     display: flex;
     align-items: center;
 
-    .down{
-        all: inherit;
+    &.down{
         color: #FF3841;
     }
-    .up{
-        all: inherit;
+    &.up{
         color: #7AE7C7;
     }
 `
@@ -56,7 +54,7 @@ export const FeaturedInfo = () => {
                 <FeaturedMoneyContainer>
                     <FeaturedMoney>LKR 12500</FeaturedMoney>
                     <Direction>
-                        -11<Icon><div className="down"><ArrowDropDown/></div></Icon>
+                        -11<Icon className="down"><ArrowDropDown/></Icon>
                     </Direction>
                 </FeaturedMoneyContainer>
                 <FeaturedSub>Compared to last Month</FeaturedSub>
@@ -66,7 +64,7 @@ export const FeaturedInfo = () => {
                 <FeaturedMoneyContainer>
                     <FeaturedMoney>LKR 9500</FeaturedMoney>
                     <Direction>
-                        -6<Icon><div className="down"><ArrowDropDown/></div></Icon>
+                        -6<Icon className="down"><ArrowDropDown/></Icon>
                     </Direction>
                 </FeaturedMoneyContainer>
                 <FeaturedSub>Compared to last Month</FeaturedSub>
@@ -76,7 +74,7 @@ export const FeaturedInfo = () => {
                 <FeaturedMoneyContainer>
                     <FeaturedMoney>LKR 6200</FeaturedMoney>
                     <Direction>
-                        +10<Icon><div className="up"><ArrowDropUp/></div></Icon>
+                        +10<Icon className="up"><ArrowDropUp/></Icon>
                     </Direction>
                 </FeaturedMoneyContainer>
                 <FeaturedSub>Compared to last Month</FeaturedSub>

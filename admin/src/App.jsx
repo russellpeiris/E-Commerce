@@ -10,6 +10,7 @@ import NewUser from './pages/NewUser'
 import ProductList from './pages/ProductList'
 import Product from './pages/Product'
 import NewProduct from './pages/NewProduct'
+import Page from './pages/Page.jsx'
 
 const Container = styled.div`
     display: flex;
@@ -43,6 +44,9 @@ const App = () => {
                     </Routes>
                     <Routes>
                         <Route path='/new-product' element={<NewProduct/>}/>
+                    </Routes>
+                    <Routes>
+                        <Route path='/unavailable' element={<Page/>}/>
                     </Routes>
                 </Container>  
             </Router>

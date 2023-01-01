@@ -1,4 +1,4 @@
-import { AnalyticsOutlined, HomeOutlined, MonetizationOnOutlined, AccountCircleOutlined, SendToMobileOutlined, ArticleOutlined, EmailOutlined, FeedbackOutlined, ChatOutlined, WorkOutlineOutlined, Inventory2Outlined } from "@mui/icons-material"
+import { AnalyticsOutlined, HomeOutlined, MonetizationOnOutlined, AccountCircleOutlined, SendToMobileOutlined, ArticleOutlined, EmailOutlined, FeedbackOutlined, ChatOutlined, WorkOutlineOutlined, Inventory2Outlined, Add, PersonAdd, PersonAddOutlined, AddBoxOutlined } from "@mui/icons-material"
 import { Link } from "react-router-dom"
 import { NavLink as BaseNavLink } from "react-router-dom";
 import styled from "styled-components"
@@ -75,12 +75,12 @@ const Sidebar = () => {
                                 </NavLink>
                             </ListItem>
                             <ListItem>
-                                <NavLink to={'/analytics'}>
+                                <NavLink to={'/unavailable'}>
                                     <Icon><AnalyticsOutlined/></Icon>Analytics
                                 </NavLink>
                             </ListItem>
                             <ListItem>
-                                <NavLink to={'/sales'}>
+                                <NavLink to={'/unavailable'}>
                                     <Icon><MonetizationOnOutlined/></Icon>Sales
                                 </NavLink>
                             </ListItem>
@@ -100,13 +100,13 @@ const Sidebar = () => {
                                 </NavLink>
                                 </ListItem>
                             <ListItem>
-                                <NavLink to={'/transactions'}>
-                                    <Icon><SendToMobileOutlined/></Icon>Transactions
+                                <NavLink to={'/new-user'}>
+                                    <Icon><PersonAddOutlined/></Icon>New User
                                 </NavLink>
                                 </ListItem>
                             <ListItem>
-                                <NavLink to={'/reports'}>
-                                    <Icon><ArticleOutlined/></Icon>Reports
+                                <NavLink to={'/new-product'}>
+                                    <Icon><AddBoxOutlined/></Icon>New Product
                                 </NavLink>
                             </ListItem>
                         </List>
@@ -115,37 +115,37 @@ const Sidebar = () => {
                         <Title>Notifications</Title>
                         <List>
                             <ListItem>
-                                <NavLink to={'/mail'}>
+                                <NavLink to={'/unavailable'}>
                                     <Icon><EmailOutlined/></Icon>Mail
                                 </NavLink>
                             </ListItem>
                             <ListItem>
-                                <NavLink to={'/feedback'}>
+                                <NavLink to={'/unavailable'}>
                                     <Icon><FeedbackOutlined/></Icon>Feedback
                                 </NavLink>
                             </ListItem>
                             <ListItem>
-                                <NavLink to={'/messages'}>
+                                <NavLink to={'/unavailable'}>
                                     <Icon><ChatOutlined/></Icon>Messages
                                 </NavLink>
                             </ListItem>                        
                         </List>
                     </Menu>
                     <Menu>
-                        <Title>Staff</Title>
+                        <Title>Other</Title>
                         <List>
                             <ListItem>
-                                <NavLink to={'/manage'}>
-                                    <Icon><WorkOutlineOutlined/></Icon>Manage
+                                <NavLink to={'/unavailable'}>
+                                    <Icon><SendToMobileOutlined/></Icon>Transactions
                                 </NavLink>
                             </ListItem>
                             <ListItem>
-                                <NavLink to={'/analytics'}>
+                                <NavLink to={'/unavailable'}>
                                     <Icon><AnalyticsOutlined/></Icon>Analytics
                                 </NavLink>
                             </ListItem>
                             <ListItem>
-                                <NavLink to={'/reports'}>
+                                <NavLink to={'/unavailable'}>
                                     <Icon><ArticleOutlined/></Icon>Reports
                                 </NavLink>
                             </ListItem>                        
