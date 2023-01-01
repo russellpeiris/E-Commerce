@@ -1,4 +1,6 @@
 import { AnalyticsOutlined, HomeOutlined, MonetizationOnOutlined, AccountCircleOutlined, SendToMobileOutlined, ArticleOutlined, EmailOutlined, FeedbackOutlined, ChatOutlined, WorkOutlineOutlined, Inventory2Outlined } from "@mui/icons-material"
+import { Link } from "react-router-dom"
+import { NavLink as BaseNavLink } from "react-router-dom";
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -32,80 +34,121 @@ const Icon = styled.div`
     padding-right: 5px;
     
 `
-const ListItem = styled.li`
+const ListItem = styled.li``
+
+const NavLink = styled(BaseNavLink)`
     display: flex;
+    margin: 4px 0;
     padding: 5px;
-    margin: 2px 0;
     align-items: center;
+    text-decoration: none;
+    cursor: pointer;
     border-radius: 5px;
     transition: all 0.2s ease;
-    cursor: pointer;
+    color: black;
 
     &:hover{
         padding: 5px 5px 5px 8px;
-        /* background-color: #75BBA7; */
         box-shadow: 0px 0px 11px 0px rgba(166,166,166,1);
     }
-    .active{
-        all:inherit;
+    
+    &.active{
+        color: black;
         box-shadow: 0px 0px 11px 0px rgba(166,166,166,1);
-    
-        &:hover{
-            padding: 5px 5px 5px 8px;
-        }
+        background-color: #6ECCAF;
     }
 `
-const ListItemActive = styled.li`
-    display: flex;
-    padding: 5px;
-    margin: 2px 0;
-    align-items: center;
-    border-radius: 5px;
-    transition: all 0.2s ease;
-    background-color: #6ECCAF;
-    cursor: pointer;
-    box-shadow: 0px 0px 11px 0px rgba(166,166,166,1);
-    
-    &:hover{
-        padding: 5px 5px 5px 8px;
-    }
-`
-
 const Sidebar = () => {
+
     return (
+
             <Container>
                 <Wrapper>
                     <Menu>
                         <Title>Dashboard</Title>
                         <List>
-                            <ListItemActive><Icon><HomeOutlined/></Icon>Home</ListItemActive>
-                            <ListItem><Icon><AnalyticsOutlined/></Icon>Analytics</ListItem>
-                            <ListItem><Icon><MonetizationOnOutlined/></Icon>Sales</ListItem>
+                            <ListItem>
+                                <NavLink to={'/'} >
+                                    <Icon>
+                                        <HomeOutlined/>
+                                    </Icon>Home
+                                </NavLink>
+                            </ListItem>
+                            <ListItem>
+                                <NavLink to={'/analytics'}>
+                                    <Icon><AnalyticsOutlined/></Icon>Analytics
+                                </NavLink>
+                            </ListItem>
+                            <ListItem>
+                                <NavLink to={'/sales'}>
+                                    <Icon><MonetizationOnOutlined/></Icon>Sales
+                                </NavLink>
+                            </ListItem>
                         </List>
                     </Menu>
                     <Menu>
                         <Title>Quick Menu</Title>
                         <List>
-                            <ListItem><Icon><AccountCircleOutlined/></Icon>Users</ListItem>
-                            <ListItem><Icon><Inventory2Outlined/></Icon>Products</ListItem>
-                            <ListItem><Icon><SendToMobileOutlined/></Icon>Transactions</ListItem>
-                            <ListItem><Icon><ArticleOutlined/></Icon>Reports</ListItem>
+                            <ListItem>
+                                <NavLink to={'/users'}>
+                                    <Icon><AccountCircleOutlined/></Icon>Users
+                                </NavLink>
+                                </ListItem>
+                            <ListItem>
+                                <NavLink to={'/products-list'}>
+                                    <Icon><Inventory2Outlined/></Icon>Products
+                                </NavLink>
+                                </ListItem>
+                            <ListItem>
+                                <NavLink to={'/transactions'}>
+                                    <Icon><SendToMobileOutlined/></Icon>Transactions
+                                </NavLink>
+                                </ListItem>
+                            <ListItem>
+                                <NavLink to={'/reports'}>
+                                    <Icon><ArticleOutlined/></Icon>Reports
+                                </NavLink>
+                            </ListItem>
                         </List>
                     </Menu>
                     <Menu>
                         <Title>Notifications</Title>
                         <List>
-                            <ListItem><Icon><EmailOutlined/></Icon>Mail</ListItem>
-                            <ListItem><Icon><FeedbackOutlined/></Icon>Feedback</ListItem>
-                            <ListItem><Icon><ChatOutlined/></Icon>Messages</ListItem>                        
+                            <ListItem>
+                                <NavLink to={'/mail'}>
+                                    <Icon><EmailOutlined/></Icon>Mail
+                                </NavLink>
+                            </ListItem>
+                            <ListItem>
+                                <NavLink to={'/feedback'}>
+                                    <Icon><FeedbackOutlined/></Icon>Feedback
+                                </NavLink>
+                            </ListItem>
+                            <ListItem>
+                                <NavLink to={'/messages'}>
+                                    <Icon><ChatOutlined/></Icon>Messages
+                                </NavLink>
+                            </ListItem>                        
                         </List>
                     </Menu>
                     <Menu>
                         <Title>Staff</Title>
                         <List>
-                            <ListItem><Icon><WorkOutlineOutlined/></Icon>Manage</ListItem>
-                            <ListItem><Icon><AnalyticsOutlined/></Icon>Analytics</ListItem>
-                            <ListItem><Icon><ArticleOutlined/></Icon>Reports</ListItem>                        
+                            <ListItem>
+                                <NavLink to={'/manage'}>
+                                    <Icon><WorkOutlineOutlined/></Icon>Manage
+                                </NavLink>
+                            </ListItem>
+                            <ListItem>
+                                <NavLink to={'/analytics'}>
+                                    <Icon><AnalyticsOutlined/></Icon>Analytics
+                                </NavLink>
+                            </ListItem>
+                            <ListItem>
+                                <NavLink to={'/reports'}>
+                                    <Icon><ArticleOutlined/></Icon>Reports
+                                </NavLink>
+                            </ListItem>                        
                         </List>
                     </Menu>
                 </Wrapper>

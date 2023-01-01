@@ -3,14 +3,13 @@ import styled from "styled-components"
 
 const Container = styled.div`
     flex: 2;
-    margin-right: 10px;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 11px 0px rgba(166,166,166,0.2);
 `
 
 const Title = styled.h2`
-    font-weight: 500;
+    font-size: 21px;
 `
 const List = styled.ul`
     list-style: none;
@@ -51,10 +50,10 @@ const DisplayButton = styled.button`
     transition: all 0.2s ease;
     width: 100px;
     height: 40px;
-
+    //height width needed for transition
     &:hover{
         background-color: #75BBA7;
-        padding: 8px 12px 8px 14px;
+        padding: 8px 12px 8px 16px;
         box-shadow: 0px 0px 11px 0px rgba(166,166,166,0.2);
 
     }

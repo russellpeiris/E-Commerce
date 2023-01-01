@@ -2,18 +2,18 @@ import styled from "styled-components"
 
 const Container = styled.div`
     flex: 3;
-    margin-left: 10px;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 11px 0px rgba(166,166,166,0.2);
 `
 const Title = styled.h2`
-    font-weight: 500;
+    font-size: 21px;
 `
 const Table = styled.table`
     width: 100%;
     border-spacing: 10px;
     margin: 20px 0;
+    background-color: #fcfcfc;
     border: none;
 
 `

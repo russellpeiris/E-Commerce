@@ -8,11 +8,12 @@ import WidgetL from "../components/WidgetL"
 
 const Container = styled.div`
     flex: 6;
+    padding: 40px 20px;
 `
 const Widgets = styled.div`
     display: flex;
-    margin: 20px;
-
+    gap: 15px;
+    margin-top: 20px;
 `
 
 export const Home = () => {

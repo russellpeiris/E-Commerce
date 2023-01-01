@@ -2,15 +2,13 @@ import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material"
 import styled from "styled-components"
 
 const Container = styled.div`
-    width: 100%;
     display: flex;
-    margin: 20px 0;
-    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
 `
 const FeaturedItem = styled.div`
     flex: 1;
     background-color: #2E428A;
-    margin:0 20px;
     padding: 30px;
     border-radius: 10px;
     color: #fff;
