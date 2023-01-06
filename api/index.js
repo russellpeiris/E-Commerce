@@ -7,7 +7,13 @@ const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
 const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
+const cors = require("cors")
 
+app.use(
+    cors({
+        origin: "http://localhost:3000",
+    })
+)
 
 
 dotenv.config();

@@ -1,3 +1,5 @@
+import { useState } from "react"
+import { useLocation } from "react-router-dom"
 import styled from "styled-components"
 import { Announcements } from "../components/Announcements"
 import Footer from "../components/Footer"
@@ -38,39 +40,56 @@ const Option = styled.option`
 `
 
 function ProductList() {
-  return (
-    <Container>
-        <Navbar/>
-        <Announcements/>
-        <Title>Dresses</Title>
-        <FilterContainer>
-            <Filter><FilterText>Filter Products :</FilterText>
-                <Select>
-                    <Option disabled selected>Color</Option>
-                    <Option>White</Option>
-                    <Option>Black</Option>
-                    <Option>Red</Option>
-                </Select>
-                <Select>
-                    <Option disabled selected>Size</Option>
-                    <Option>M</Option>
-                    <Option>L</Option>
-                    <Option>XL</Option>
-                </Select>
-            </Filter>
-            <Filter><FilterText>Sort Products :</FilterText>
-            <Select>
-                    <Option disabled selected>Newest</Option>
-                    <Option>Price Lowest</Option>
-                    <Option>Price Highest</Option>
-                </Select>
-            </Filter>
-        </FilterContainer>
-        <Products/>
-        <Newsletter/>
-        <Footer/>
-    </Container>
-  )
+
+    const location = useLocation(); 
+    const cat = location.pathname.split("/")[2];
+
+    const [sort, setSort] = useState("newest")
+    const [filters, setFilters] = useState({})
+
+
+    const handleFilters = (e) => {
+        const value =e.target.value;
+        setFilters({
+            ...filters, //spread operator  used to pass the properties of an object or the elements of an array
+            [e.target.name]: value,
+        });
+    }
+    console.log(filters);
+
+    return (
+        <Container>
+            <Navbar/>
+            <Announcements/>
+            <Title>{cat}</Title>
+            <FilterContainer>
+                <Filter><FilterText>Filter Products :</FilterText>
+                    <Select name="color" onChange={handleFilters}>
+                        <Option disabled >Color</Option>
+                        <Option>White</Option>
+                        <Option>Black</Option>
+                        <Option>Brown</Option>
+                    </Select>
+                    <Select name="size" onChange={handleFilters}>
+                        <Option disabled >Size</Option>
+                        <Option>M</Option>
+                        <Option>L</Option>
+                        <Option>XL</Option>
+                    </Select>
+                </Filter>
+                <Filter><FilterText>Sort Products :</FilterText>
+                <Select onChange={(e) => setSort(e.target.value)}>
+                        <Option value="newest">Newest</Option>
+                        <Option value="low">Price Lowest</Option>
+                        <Option value="high">Price Highest</Option>
+                    </Select>
+                </Filter>
+            </FilterContainer>
+            <Products cat={cat} filters={filters} sort={sort}/>
+            <Newsletter/>
+            <Footer/>
+        </Container>
+    )
 }
 
 export default ProductList
