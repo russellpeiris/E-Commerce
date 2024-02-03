@@ -2,7 +2,7 @@
 # E-Commerce MERN Stack
 
 This was my first MERN application, I watched a tutorial by lama dev, and I was able to successfully develop the frontend and backend, however, I failed to during integration.
-
+(I have used my own styles)
 Please note that this was the very first MERN application I tried to develop with no prior experience. Following the tutorial was so frustrating as they were over 3 hours.
 
 ### Admin Portal
